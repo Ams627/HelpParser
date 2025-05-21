@@ -175,6 +175,7 @@ public class HelpTextParser
             }
         }
     }
+
     public static void DumpAllHelp(List<HelpSection> sections, string outputPath)
     {
         using var writer = new StreamWriter(outputPath);
@@ -205,14 +206,13 @@ public class HelpTextParser
         Console.WriteLine($"Help dump written to {outputPath}");
     }
 
-
     public static List<Option> BuildOptionsFromHelp(HelpSection section)
     {
-        return [.. section.Options.Select(po => new OptionBuilder()
+        return section.Options.Select(po => new OptionBuilder()
             .WithShortOption(po.ShortName)
             .WithLongOption(po.LongName)
             .WithGroup(po.OptionGroup)
             .WithNumberOfParams(po.Parameters.Count)
-            .Build())];
+            .Build()).ToList();
     }
 }
