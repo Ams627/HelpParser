@@ -1,9 +1,4 @@
-﻿#nullable enable
-
-using System;
-
-
-namespace CliFx.HelpSystem;
+﻿namespace CliFx.HelpSystem;
 
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
 public sealed class CommandHandlerAttribute : Attribute

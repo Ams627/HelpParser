@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace CliFx.HelpSystem;
+﻿namespace CliFx.HelpSystem;
 
 public static class HelpDispatcher
 {

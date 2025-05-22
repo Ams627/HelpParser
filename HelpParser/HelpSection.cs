@@ -1,8 +1,4 @@
-﻿#nullable enable
-
-using System.Collections.Generic;
-
-namespace CliFx.HelpSystem;
+﻿namespace CliFx.HelpSystem;
 
 public class HelpSection
 {

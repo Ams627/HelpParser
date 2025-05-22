@@ -1,9 +1,4 @@
-﻿#nullable enable
-
-
-namespace CliFx.HelpSystem;
-
-
+﻿namespace CliFx.HelpSystem;
 using System.Threading.Tasks;
 
 public interface ICommandHandler
