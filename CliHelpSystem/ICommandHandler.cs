@@ -1,4 +1,4 @@
-﻿namespace HelpParser;
+﻿namespace CliHelpSystem;
 using System.Threading.Tasks;
 
 public interface ICommandHandler

@@ -1,4 +1,4 @@
-﻿using CliFx.HelpSystem;
+﻿using CliHelpSystem;
 using System.Reflection;
 
 var toolName = Path.GetFileNameWithoutExtension(Environment.GetCommandLineArgs()[0]);

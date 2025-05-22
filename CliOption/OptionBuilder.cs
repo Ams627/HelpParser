@@ -1,10 +1,9 @@
-﻿namespace HelpParser;
+﻿namespace CliOption;
 public class OptionBuilder
 {
     private char? _shortOption;
     private string? _longOption;
     private int _maxOccurs = 1;
-    private int _numberOfParams = 0;
     private string? _group;
     private string? _description;
     private readonly List<ParameterSpec> _parameters = [];
@@ -24,12 +23,6 @@ public class OptionBuilder
     public OptionBuilder WithMaxOccurs(int max)
     {
         _maxOccurs = max;
-        return this;
-    }
-
-    public OptionBuilder WithNumberOfParams(int n)
-    {
-        _numberOfParams = n;
         return this;
     }
 
@@ -59,10 +52,7 @@ public class OptionBuilder
         if (_maxOccurs < 1)
             throw new InvalidOperationException("MaxOccurs must be at least 1.");
 
-        if (_numberOfParams < 0)
-            throw new InvalidOperationException("NumberOfParams cannot be negative.");
-
-        return new Option(_shortOption, _longOption, _maxOccurs, _numberOfParams, _group, _description, _parameters);
+        return new Option(_shortOption, _longOption, _maxOccurs, _group, _description, _parameters);
     }
 
     public OptionBuilder Reset()
@@ -70,7 +60,6 @@ public class OptionBuilder
         _shortOption = '\0';
         _longOption = null;
         _maxOccurs = 1;
-        _numberOfParams = 0;
         _group = null;
         return this;
     }

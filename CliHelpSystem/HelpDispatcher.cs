@@ -1,5 +1,4 @@
-﻿namespace HelpParser;
-
+﻿namespace CliHelpSystem;
 public static class HelpDispatcher
 {
     public static void Dispatch(string[] args, List<HelpSection> sections, string toolName)

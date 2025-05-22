@@ -1,6 +1,6 @@
-﻿using CliFx.HelpSystem;
+﻿using CliHelpSystem;
 
-[CommandHandlerAttribute("use")]
+[CommandHandler("use")]
 class Use : ICommandHandler
 {
     public Task<int> ExecuteAsync(string[] args)
@@ -11,7 +11,7 @@ class Use : ICommandHandler
 }
 
 
-[CommandHandlerAttribute("buy")]
+[CommandHandler("buy")]
 class Buy : ICommandHandler
 {
     public Task<int> ExecuteAsync(string[] args)

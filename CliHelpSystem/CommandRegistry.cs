@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace HelpParser;
+namespace CliHelpSystem;
 
 public static class CommandRegistry
 {

@@ -1,6 +1,7 @@
-﻿using System.Text.RegularExpressions;
+﻿using CliOption;
+using System.Text.RegularExpressions;
 
-namespace HelpParser;
+namespace CliHelpSystem;
 
 public class HelpTextParser
 {

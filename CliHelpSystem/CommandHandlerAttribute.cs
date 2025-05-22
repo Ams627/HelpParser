@@ -1,4 +1,4 @@
-﻿namespace HelpParser;
+﻿namespace CliHelpSystem;
 
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
 public sealed class CommandHandlerAttribute : Attribute
