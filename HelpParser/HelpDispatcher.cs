@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HelpParser;
+namespace CliFx.HelpSystem;
 
 public static class HelpDispatcher
 {
@@ -16,6 +16,6 @@ public static class HelpDispatcher
 
         // Skip "help"
         var commandPath = string.Join(" ", args.Skip(1));
-        HelpTextParser.PrintHelp(sections, commandPath);
+        //        HelpTextParser.PrintHelp(sections, commandPath);
     }
 }

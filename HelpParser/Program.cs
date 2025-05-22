@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
+﻿/*
 namespace HelpParser;
 class Program
 {
@@ -62,16 +58,11 @@ class Program
                 return;
             }
 
-            var options = HelpTextParser.BuildOptionsFromHelp(section);
-
+            var commandSection = sections.First(s => s.CommandPath == commandPath);
             Console.WriteLine($"\nOptions available for '{commandPath}':\n");
-            foreach (var opt in options)
+            foreach (var opt in commandSection.Options)
             {
-                var flags = new List<string>();
-                if (opt.ShortOption != null) flags.Add("-" + opt.ShortOption);
-                if (opt.LongOption != null) flags.Add(opt.LongOption);
-
-                Console.WriteLine($"  {string.Join(", ", flags),-20}");
+                Console.WriteLine($"Option: -{opt.ShortOption}, --{opt.LongOption}");
             }
         }
         catch (Exception ex)
@@ -82,3 +73,4 @@ class Program
         }
     }
 }
+*/

@@ -1,7 +1,7 @@
 ﻿#nullable enable
 
 using System;
-
+using System.Collections.Generic;
 public class OptionBuilder
 {
     private char? _shortOption;
@@ -9,6 +9,8 @@ public class OptionBuilder
     private int _maxOccurs = 1;
     private int _numberOfParams = 0;
     private string? _group;
+    private string? _description;
+    private readonly List<ParameterSpec> _parameters = [];
 
     public OptionBuilder WithShortOption(char? c)
     {
@@ -34,9 +36,21 @@ public class OptionBuilder
         return this;
     }
 
-    public OptionBuilder WithGroup(string group)
+    public OptionBuilder WithGroup(string? group)
     {
         _group = group;
+        return this;
+    }
+
+    public OptionBuilder WithDescription(string? description)
+    {
+        _description = description;
+        return this;
+    }
+
+    public OptionBuilder WithParameter(string name, string? type)
+    {
+        _parameters.Add(new ParameterSpec(name, type));
         return this;
     }
 
@@ -51,7 +65,7 @@ public class OptionBuilder
         if (_numberOfParams < 0)
             throw new InvalidOperationException("NumberOfParams cannot be negative.");
 
-        return new Option(_shortOption, _longOption, _maxOccurs, _numberOfParams, _group);
+        return new Option(_shortOption, _longOption, _maxOccurs, _numberOfParams, _group, _description, _parameters);
     }
 
     public OptionBuilder Reset()
