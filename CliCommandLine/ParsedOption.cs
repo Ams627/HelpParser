@@ -1,5 +1,3 @@
-﻿using System.Collections.Generic;
+﻿namespace CliCommandLine;
 
-namespace CliCommandLine;
-
-internal record ParsedOption(int Index, bool IsShortOption, int OptionIndex, List<string>? Params);
+public record ParsedOption(int Index, bool IsShortOption, int OptionIndex, List<string>? Params);

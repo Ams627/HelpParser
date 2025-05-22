@@ -250,7 +250,7 @@ public class HelpTextParser
                     names.Add("<" + p.Name + (p.Type != null ? ":" + p.Type : "") + ">");
                 }
 
-                Console.WriteLine($"  {string.Join(" ", names),-20} {FormatAsciiDoc(opt.Description)}");
+                Console.WriteLine($"  {string.Join(" ", names),-20} {FormatAsciiDoc(opt.Description!)}");
             }
         }
     }
